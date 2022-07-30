@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="palette_tracking_form_view">
+            <field name="name">palette.tracking.form.view</field>
+            <field name="model">palette.tracking</field>
+            <field name="arch" type="xml">
+                <form string="Palette Tracking">
+                    <header>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="picking_id"/>
+                                <field name="partner_id"/>
+                                <field name="license_plate"/>
+                                <field name="picking_partner_id"/>
+                            </group>
+                            <group>
+                                <field name="picking_date_done"/>
+                                <field name="palette_count_plus"/>
+                                <field name="palette_count_minus"/>
+                                <field name="palette_balance"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    
+        <record id="palette_tracking_tree_view" model="ir.ui.view">
+            <field name="name">palette.tracking.tree.view</field>
+            <field name="model">palette.tracking</field>
+            <field name="arch" type="xml">
+                <tree string="Palette Tracking">
+                    <field name="picking_id"/>
+                    <field name="partner_id"/>
+                    <field name="license_plate"/>
+                    <field name="picking_partner_id"/>
+                    <field name="picking_date_done"/>
+                    <field name="palette_count_plus"/>
+                    <field name="palette_count_minus"/>
+                    <field name="palette_balance"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_palette_tracking" model="ir.actions.act_window">
+            <field name="name">Palette Tracking</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">palette.tracking</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+        </record>
+
+        <menuitem 
+                id="root_menu_palette_tracking"  
+                name="Palette Tracking"
+                sequence="1" />
+
+        <menuitem 
+                id="menu_palette_tracking"  
+                name="Palette Tracking"
+                action="action_palette_tracking"
+                parent="palette_tracking.root_menu_palette_tracking"
+                sequence="1" />
+
+    </data>
+</odoo>

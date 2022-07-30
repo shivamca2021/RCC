@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+
+        <record id="res_config_settings_view_api_cistom" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.custom</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="20"/>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <!-- <xpath expr="//div[hasclass('settings')]/div[hasclass('app_settings_block')]/div[@id='website_selection_settings']" position="inside"> -->
+                <xpath expr="//div[hasclass('settings')]" position="inside">
+                    <div class="app_settings_block" data-string="Smartystreets API" string="Smartystreets API" data-key="SmartystreetsAPI">
+                        <h2>Smartystreets API Information</h2>
+                        <div class="row mt16 o_settings_container" id="website_smartystreets_api">
+                            <div class="col-xs-12 col-md-6 o_setting_box" id="website_smartystreets">
+                                <div class="o_setting_right_pane">
+                                    <div class="text-muted">
+                                        Smartystreets API Information
+                                    </div>
+                                    <div class="mt16">
+                                        <label for="username"/>
+                                        <field name="username"/>
+                                    </div>
+                                    <div class="mt16">
+                                        <label for="password"/>
+                                        <field name="password"/>
+                                    </div>
+                                    <div class="mt16">
+                                        <label for="api_key"/>
+                                        <field name="api_key"/>
+                                    </div>
+                                    <div class="mt16">
+                                        <label for="api_auth_token"/>
+                                        <field name="api_auth_token"/>
+                                    </div>
+                                    <div>
+                                        <button name="connect_api" type="object" string="Connect API" class="btn-secondary" icon="fa-arrow-right"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
